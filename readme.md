@@ -8,8 +8,7 @@ Here you have a HTML and CSS layout application. It is an application that manag
 
 ## Requeriments
 
--This application will be fed from a JS object that you have in the `series.js` file.
-
+-   This application will be fed from a JS object that you have in the `series.js` file.
 -   You have to show a list of series, separating them between watched and unwatched.
 -   Each series has to show all the information you see in the layout.
 -   If the series is unviewed, its stars have to be set to 0 and the user should be able to click to rate the series with the stars he/she thinks necessary.

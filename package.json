@@ -10,7 +10,7 @@
         "prepare": "husky install",
         "lint": "eslint .",
         "test": "jest --watchAll --coverage",
-        "test:prod": "jest --watchAll --coverage --watchAll=false"
+        "test:prod": "jest --watchAll --coverage --watchAll=false --passWithNoTests"
     },
     "prettier": {
         "singleQuote": true
