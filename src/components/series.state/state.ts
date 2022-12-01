@@ -31,6 +31,7 @@ export const seriesWatched = SERIES.filter((item) => item.watched === true);
 export const serieMsgPending = (serie: Array<SerieType>) => {
     try {
         let itemsTemplate = `<section class="series-pending"><h3 class="subsection-title">Pending series</h3>`;
+
         serie.length === 0
             ? (itemsTemplate += `<p class="info">Congrats! You've watched all your series</p>`)
             : (itemsTemplate += `<p class="info">You have ${serie.length} series pending to watch</p>`);
@@ -41,11 +42,15 @@ export const serieMsgPending = (serie: Array<SerieType>) => {
     }
 };
 export const serieMsgWatched = (serie: Array<SerieType>) => {
-    let itemsTemplate = `<section class="series-watched"><h3 class="subsection-title">Watched series</h3>`;
-    serie.length === 0
-        ? (itemsTemplate += `<p class="info">You already have not watched any serie</p>`)
-        : (itemsTemplate += `<p class="info">You have watched ${serie.length} series</p>`);
-    return itemsTemplate;
+    try {
+        let itemsTemplate = `<section class="series-watched"><h3 class="subsection-title">Watched series</h3>`;
+        serie.length === 0
+            ? (itemsTemplate += `<p class="info">You already have not watched any serie</p>`)
+            : (itemsTemplate += `<p class="info">You have watched ${serie.length} series</p>`);
+        return itemsTemplate;
+    } catch (error) {
+        consoleDebug((error as Error).message);
+    }
 };
 
 //Generate score of items
