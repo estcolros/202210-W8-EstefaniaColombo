@@ -84,19 +84,3 @@ export function serieScore(score: number) {
         return scoreTemplate;
     }
 }
-
-//Delete Button in progress
-// export const handleClickDelete = (id: number) => {
-//     console.log('CLICK DELETE');
-//     const series = SERIES.filter((series) => series.id !== id);
-//     return series;
-// };
-
-// export const addDeleteListeners = () => {
-//     const deleteButtons = document.querySelectorAll('.icon--delete');
-//     deleteButtons.forEach((item, index) => {
-//         item.addEventListener('click', () => {
-//             handleClickDelete(index);
-//         });
-//     });
-// };
