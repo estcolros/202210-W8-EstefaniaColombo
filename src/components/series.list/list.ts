@@ -15,12 +15,11 @@ export class List extends Component {
     render() {
         return super.innRender(this.selector);
     }
-
     manageComponent(series: Array<SerieType>) {
         consoleDebug(series);
         setTimeout(() => {
             try {
-                new Item(`${this.selector} .series-list`, series);
+                new Item(`${this.selector}.series-list`, series);
             } catch (error) {
                 consoleDebug((error as Error).message);
             }
@@ -31,8 +30,7 @@ export class List extends Component {
         let itemsTemplate = '';
         const listWatcheds = (item: Serie) => item.watched === false;
         const serieWatched = series.every(listWatcheds);
-        itemsTemplate += `
-             <section class="series">
+        itemsTemplate += `<section class="series">
                     ${
                         serieWatched
                             ? serieMsgPending(series)
