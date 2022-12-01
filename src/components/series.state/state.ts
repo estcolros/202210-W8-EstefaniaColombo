@@ -33,8 +33,8 @@ export const serieMsgPending = (serie: Array<SerieType>) => {
         let itemsTemplate = `<section class="series-pending"><h3 class="subsection-title">Pending series</h3>`;
 
         serie.length === 0
-            ? (itemsTemplate += `<p class="info">Congrats! You've watched all your series</p>`)
-            : (itemsTemplate += `<p class="info">You have ${serie.length} series pending to watch</p>`);
+            ? (itemsTemplate = `<p class="info">Congrats! You've watched all your series</p>`)
+            : (itemsTemplate = `<p class="info">You have ${serie.length} series pending to watch</p>`);
 
         return itemsTemplate;
     } catch (error) {
@@ -45,8 +45,8 @@ export const serieMsgWatched = (serie: Array<SerieType>) => {
     try {
         let itemsTemplate = `<section class="series-watched"><h3 class="subsection-title">Watched series</h3>`;
         serie.length === 0
-            ? (itemsTemplate += `<p class="info">You already have not watched any serie</p>`)
-            : (itemsTemplate += `<p class="info">You have watched ${serie.length} series</p>`);
+            ? (itemsTemplate = `<p class="info">You already have not watched any serie</p>`)
+            : (itemsTemplate = `<p class="info">You have watched ${serie.length} series</p>`);
         return itemsTemplate;
     } catch (error) {
         consoleDebug((error as Error).message);
@@ -57,7 +57,7 @@ export const serieMsgWatched = (serie: Array<SerieType>) => {
 export function serieScore(score: number) {
     let scoreTemplate = '';
     if (score === 0) {
-        return (scoreTemplate = `
+        return `
             <li class="score__star">
                 <i class="icon--score far fa-star" title="1/5"></i>
             </li>
@@ -72,7 +72,7 @@ export function serieScore(score: number) {
             </li>
             <li class="score__star">
                 <i class="icon--score far fa-star" title="5/5"></i>
-            </li>`);
+            </li>`;
     }
     if (score > 0) {
         for (let i = 0; i < score; i++) {
