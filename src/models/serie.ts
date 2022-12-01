@@ -26,7 +26,6 @@ export class Serie implements SerieType {
         public score: number,
         public emmies: number
     ) {
-        //this.id = Serie.generateId();
         this.watched = false;
     }
 }
