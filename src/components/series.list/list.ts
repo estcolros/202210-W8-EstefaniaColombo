@@ -19,7 +19,7 @@ export class List extends Component {
         consoleDebug(series);
         setTimeout(() => {
             try {
-                new Item(`${this.selector}.series-list`, series);
+                new Item(`${this.selector} .series-list`, series);
             } catch (error) {
                 consoleDebug((error as Error).message);
             }
@@ -30,7 +30,7 @@ export class List extends Component {
         let itemsTemplate = '';
         const listWatcheds = (item: Serie) => item.watched === false;
         const serieWatched = series.every(listWatcheds);
-        itemsTemplate += `<section class="series">
+        itemsTemplate += `
                     ${
                         serieWatched
                             ? serieMsgPending(series)
